@@ -1,3 +1,5 @@
+print("starting the run of train_cpu script.")
+
 import os
 import time
 import torch
@@ -19,23 +21,23 @@ XLA_AVAILABLE = False
 # DATASET = 'mnist'
 DATASET = 'fashionmnist'
 
-try:
-    if PROCESSING_UNIT == 'xla':
-        # XLA imports
-        import torch_xla.core.xla_model as xm
+# try:
+#     if PROCESSING_UNIT == 'xla':
+#         # XLA imports
+#         import torch_xla.core.xla_model as xm
 
-        # XLA imports for parallel loader and multi-processing
-        import torch_xla.distributed.parallel_loader as pl
-        from torch.utils.data.distributed import DistributedSampler
+#         # XLA imports for parallel loader and multi-processing
+#         import torch_xla.distributed.parallel_loader as pl
+#         from torch.utils.data.distributed import DistributedSampler
 
-        # Initialize XLA process group for torchrun
-        import torch_xla.distributed.xla_backend
-        torch.distributed.init_process_group('xla')
-        print('XLA Available and enabled')
-        XLA_AVAILABLE = True
-except ImportError:
-    print("XLA Libraries not installed or supported. The program will continue without it.")
-    XLA_AVAILABLE = False
+#         # Initialize XLA process group for torchrun
+#         import torch_xla.distributed.xla_backend
+#         torch.distributed.init_process_group('xla')
+#         print('XLA Available and enabled')
+#         XLA_AVAILABLE = True
+# except ImportError:
+#     print("XLA Libraries not installed or supported. The program will continue without it.")
+#     XLA_AVAILABLE = False
 
 transform = transforms.Compose(
     [transforms.ToTensor(),

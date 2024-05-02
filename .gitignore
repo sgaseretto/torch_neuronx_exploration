@@ -162,3 +162,11 @@ cython_debug/
 # Folders with data and model weights
 checkpoints/
 data/
+MNIST_DATA_train/
+MNIST_DATA_test/
+MNIST_DATA_val/
+runs/
+model_analysis_result/
+log-neuron*
+log_trainium*
+setup/aws-efa*

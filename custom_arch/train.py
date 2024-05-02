@@ -66,6 +66,7 @@ def setup_device():
     return device
 
 def main(index, device_name):
+    torch.set_default_tensor_type('torch.FloatTensor')
     # device = setup_device()
     device = device_name
     if device == 'xla':
