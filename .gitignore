@@ -170,3 +170,10 @@ model_analysis_result/
 log-neuron*
 log_trainium*
 setup/aws-efa*
+carvana/
+aws_neuronx_venv_pytorchv1_tensorboard/
+aws_neuronx_venv_pytorchv2_tensorboard/
+compiler_cache/
+log_training/
+cifar-10-python.tar.gz
+cifar-10-batches-py/
