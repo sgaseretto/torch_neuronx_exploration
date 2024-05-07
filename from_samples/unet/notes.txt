@@ -1,0 +1,1 @@
+NEURON_RT_ASYNC_EXEC_MAX_INFLIGHT_REQUESTS=3  NEURON_CC_FLAGS='--cache_dir=./compiler_cache --model-type=cnn-training' neuron_parallel_compile torchrun --nproc_per_node=32 train.py --num_workers 2 --image_dim 256 --num_epochs 2 --batch_size 4 --drop_last --data_dir ./carvana/ --lr 0.0002

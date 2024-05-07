@@ -46,6 +46,7 @@ def main():
             optimizer.step()
             total_train_loss += loss.item()
             xm.mark_step()
+            
 
         epoch_duration = time.time() - start_time
         avg_train_loss = total_train_loss / len(train_loader)
